@@ -1,0 +1,132 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+  #bodyContent {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 10px;
+  }
+
+/**
+* Header
+* General styles for the header section
+*/
+  header#header {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    background-color: #ddd;
+  }
+    header#header .left {
+      padding: 5px;
+    }
+      header#header .left:hover {
+        background-color: #f1f1f1;
+      }
+      header#header .left a{
+        color: inherit;
+        text-decoration: inherit;
+      }
+    header#header .right {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+      header#header .right .link{
+        margin: 0px 10px;
+        padding: 0px 10px;
+      }
+        header#header .right .link:hover{
+          background-color: #f1f1f1;
+        }
+        header#header .right .link a{
+          color: inherit;
+          text-decoration: inherit;
+        }
+    header#header .linkActive {
+      font-weight: bold;
+    }
+  /* Responsive code for mobile */
+  @media screen and (max-width: 500px) {
+    header#header {
+      border: 1px solid blue;
+      padding: 20px 10px;
+    }
+  }
+
+
+/**
+* Footer
+* General styles for the footer section
+*/
+  footer#footer {
+    padding: 10px 0px;
+    background-color: #ddd;
+  }
+  /* Responsive code for mobile */
+  @media screen and (max-width: 500px) {
+    footer#footer {
+    }
+  }
+
+
+  /**
+  * Home
+  * General styles for the home section
+  */
+    section#home {
+    }
+    /* Responsive code for mobile */
+    @media screen and (max-width: 500px) {
+      section#home {
+      }
+    }
+
+
+  /**
+  * Login
+  * General styles for the login section
+  */
+    section#login {
+      position: relative;
+    }
+      section#login .formContainer{
+        margin: 0px 40px;
+        text-align: center;
+      }
+        section#login .formContainer form .mainTitle {
+          background-color: #ddd;
+          display: inline-table;
+          margin: 20px 0px;
+        }
+          section#login .formContainer form .mainTitle h1{
+            margin: 20px;
+          }
+        section#login .formContainer form .formGroup{
+          margin: 20px 0px;
+        }
+          section#login .formContainer form .formGroup button.submit{
+            padding: 10px 20px;
+          }
+    /* Responsive code for mobile */
+    @media screen and (max-width: 500px) {
+      section#login {
+      }
+    }
+
+
