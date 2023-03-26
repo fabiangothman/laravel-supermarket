@@ -23,7 +23,7 @@
     
       <div class="formGroup">
         <label for="remember">Remember me</label>
-        <input type="checkbox" name="remember" value="1" />
+        <input type="checkbox" name="remember" value="1" checked/>
       </div>
     
       <div class="formGroup">
