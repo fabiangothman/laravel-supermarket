@@ -22,13 +22,10 @@
           @auth
             <!--  Menu for admin -->
             <div class="link">
-              <a href="{{ route('products') }}" class="{{ Request::routeIs('products') ? 'linkActive' : '' }}">Lista de productos</a>
+              <a href="{{ route('products.index') }}" class="{{ Request::routeIs('products.index') ? 'linkActive' : '' }}">Lista de productos</a>
             </div>
             <div class="link">
-              <a href="{{ route('create') }}" class="{{ Request::routeIs('create') ? 'linkActive' : '' }}">Crear producto</a>
-            </div>
-            <div class="link">
-              <a href="{{ route('delete') }}" class="{{ Request::routeIs('delete') ? 'linkActive' : '' }}">Eliminar producto</a>
+              <a href="{{ route('products.create') }}" class="{{ Request::routeIs('products.create') ? 'linkActive' : '' }}">Crear producto</a>
             </div>
             <div class="link">
               <a href="{{ route('logout') }}">Logout</a>
@@ -36,7 +33,7 @@
           @else
             <!--  Menu for users -->
             <div class="link">
-              <a href="{{ route('products') }}" class="{{ Request::routeIs('products') ? 'linkActive' : '' }}">Lista de productos</a>
+              <a href="{{ route('products.index') }}" class="{{ Request::routeIs('products.index') ? 'linkActive' : '' }}">Lista de productos</a>
             </div>
             <div class="link">
               <a href="{{ route('contact') }}" class="{{ Request::routeIs('contact') ? 'linkActive' : '' }}">Contáctenos</a>
