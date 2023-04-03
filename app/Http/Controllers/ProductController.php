@@ -95,7 +95,8 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            Storage::disk('public')->delete('/images/'.$product->image);
+            if($product->image !== "demo_product.png")
+                Storage::disk('public')->delete('/images/'.$product->image);
             $imagePath = $request->file('image')->store('public/images');
             $dataValidated["image"] = basename($imagePath);
         }
@@ -113,7 +114,8 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        Storage::disk('public')->delete('/images/'.$product->image);
+        if($product->image !== "demo_product.png")
+            Storage::disk('public')->delete('/images/'.$product->image);
         $product->delete();
 
         return redirect()->route('products.index');
