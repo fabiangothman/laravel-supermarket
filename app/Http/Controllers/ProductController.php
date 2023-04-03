@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all()->sortByDesc("id");
+        $products = Product::all()->sortByDesc("updated_at");
         return view('products.index', compact('products'));
     }
 
