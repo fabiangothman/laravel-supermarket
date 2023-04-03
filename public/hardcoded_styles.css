@@ -32,6 +32,9 @@ p {
   }
     header#header .left {
       padding: 5px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
       header#header .left:hover {
         background-color: #f1f1f1;
@@ -58,6 +61,17 @@ p {
           color: inherit;
           text-decoration: inherit;
         }
+      header#header .right .link.break{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      header#header .right .link .userName{
+        color: cadetblue;
+      }
+      header#header .right .link .logout{
+        color: inherit;
+      }
     header#header .linkActive {
       font-weight: bold;
     }

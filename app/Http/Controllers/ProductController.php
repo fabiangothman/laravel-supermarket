@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -36,15 +37,22 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0'
+        $dataValidated = $request->validate([
+            'name' => 'required|string|min:1|max:255',
+            'description' => 'required|string|min:1',
+            'price' => 'required|numeric|min:1',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+        $product = new Product($dataValidated);
 
-        $product = Product::create($validatedData);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('public/images');
+            $product->image = basename($imagePath);
+        }
 
-        return redirect()->route('products.show', $product->id);
+        $product->save();
+        
+        return redirect()->route('products.show', $product->id)->with('product_saved', 'Product saved!');
     }
 
     /**
@@ -78,15 +86,23 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'price' => 'required|numeric|min:0'
+        
+        $dataValidated = $request->validate([
+            'name' => 'required|string|min:1|max:255',
+            'description' => 'required|string|min:1',
+            'price' => 'required|numeric|min:1',
+            'image' => 'sometimes|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
 
-        $product->update($validatedData);
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete('/images/'.$product->image);
+            $imagePath = $request->file('image')->store('public/images');
+            $dataValidated["image"] = basename($imagePath);
+        }
 
-        return redirect()->route('products.show', $product->id);
+        $product->update($dataValidated);
+        
+        return redirect()->route('products.show', $product->id)->with('product_saved', 'Product updated!');
     }
 
     /**
@@ -97,6 +113,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+        Storage::disk('public')->delete('/images/'.$product->image);
         $product->delete();
 
         return redirect()->route('products.index');
