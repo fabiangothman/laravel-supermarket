@@ -113,6 +113,8 @@ For installation purposes follow the instructions bellow (note you have to this 
       php artisan migrate
       php artisan db:seed
       php artisan optimize:clear
+      php artisan copy:image
+      php artisan storage:link
       ```
 
 ## Start the App

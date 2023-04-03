@@ -27,8 +27,9 @@
             <div class="link">
               <a href="{{ route('products.create') }}" class="{{ Request::routeIs('products.create') ? 'linkActive' : '' }}">Crear producto</a>
             </div>
-            <div class="link">
-              <a href="{{ route('logout') }}">Logout</a>
+            <div class="link break">
+              <span class="userName">Hola, {{ auth()->user()->name }}</span>
+              <a href="{{ route('logout') }}" class="logout">Logout</a>
             </div>
           @else
             <!--  Menu for users -->
