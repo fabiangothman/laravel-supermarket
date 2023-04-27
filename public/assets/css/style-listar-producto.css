@@ -1,0 +1,129 @@
+/* Estilos globales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: rgb(51, 51, 51);
+}
+
+h2, h3 {
+margin: 0;
+}
+
+h2{
+    text-align: center;
+    margin-top: 30px;
+}
+
+p {
+margin: 0 0 1rem;
+}
+
+.description{
+height: 140px;
+font-size: 15px;
+}
+
+.price{
+    margin: 5px;
+}
+
+img {
+max-width: 35%;
+height: auto;
+}
+
+/* Estilos de la sección de productos */
+.products {
+display: flex;
+flex-direction: column;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.product-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+
+.product-card {
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 10px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+padding: 1rem;
+text-align: center;
+width: 500px; /*Esto determina el ancho de la caja*/
+margin: 0 auto; /* Centra horizontalmente */
+margin-bottom: 40px;
+}
+
+.product-card h3 {
+font-size: 1.25rem;
+margin: 0.5rem 0;
+}
+
+.product-card .price {
+font-weight: bold;
+}
+
+.product-card .description {
+font-style: italic;
+}
+
+.button-group {
+margin-top: 1rem;
+}
+
+.edit-button, .delete-button {
+background-color: rgb(51, 51, 51);
+border: none;
+color: #fff;
+padding: 0.5rem 1rem;
+margin-right: 0.5rem;
+cursor: pointer;
+transition: background-color 0.2s;
+border-radius: 7px;
+}
+
+.edit-button {
+background-color: rgb(76, 175, 80);
+}
+
+.delete-button {
+background-color: rgb(242, 58, 34);
+}
+
+.edit-button:hover, .delete-button:hover {
+background-color: rgb(85, 85, 85);
+}
+
+/* Estilos para centrar el link para regresar a la página principal */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* Estilos para el botón para regresar a la página principal */
+.btn {
+    background-color: #20548a;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para el botón para regresar a la página principal al pasar el mouse */
+.btn:hover {
+    background-color: #0062cc;
+}

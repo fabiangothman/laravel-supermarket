@@ -21,16 +21,12 @@ Route::get('/', function () {
   return view('home');
 })->name('home');
 
-Route::get('/products', function () {
-  return view('products');
-})->name('products');
+Route::get('/welcome', function () {
+  return view('welcome');
+})->name('welcome')->middleware('auth');
 
-Route::get('/contact', function () {
-  return view('contact');
-})->name('contact');
-
+Route::get('/list', [ProductController::class, 'list'])->name('list');
 Route::get('/create', [CreateController::class, 'index'])->name('create');
-
 Route::get('/delete', [DeleteController::class, 'index'])->name('delete');
 
 /**
@@ -45,7 +41,7 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 /**
  * Product endpoints
  */
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/products', [ProductController::class, 'index'])->name('products.index')->middleware('auth');
 Route::get('/products/create', [ProductController::class, 'create'])->name('products.create')->middleware('auth');
 Route::post('/products', [ProductController::class, 'store'])->name('products.store')->middleware('auth');
 Route::get('/products/{product}', [ProductController::class, 'show'])->name('products.show')->middleware('auth');

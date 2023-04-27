@@ -1,7 +1,7 @@
 @include('layout.header')
 
 <section id="products_index">
-  <h1>Products index</h1>
+  <br />
   <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Create Product</a>
   <table class="table" border="1">
     <thead>
@@ -9,6 +9,7 @@
         <th>Image</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Ingredients</th>
         <th>Price</th>
         <th>Actions</th>
       </tr>
@@ -21,6 +22,7 @@
           </td>
           <td>{{ $product->name }}</td>
           <td>{{ $product->description }}</td>
+          <td>{{ $product->ingredients }}</td>
           <td>{{ number_format($product->price) }}</td>
           <td>
             <a href="{{ route('products.show', $product->id) }}" class="btn btn-primary">View</a>

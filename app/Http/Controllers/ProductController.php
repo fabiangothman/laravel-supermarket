@@ -9,7 +9,18 @@ use Illuminate\Support\Facades\Storage;
 class ProductController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource for guest view.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function list()
+    {
+        $products = Product::all()->sortByDesc("updated_at");
+        return view('list', compact('products'));
+    }
+
+    /**
+     * Display a listing of the resource for admin view.
      *
      * @return \Illuminate\Http\Response
      */
