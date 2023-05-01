@@ -21,7 +21,12 @@ margin: 0 0 1rem;
 }
 
 .description{
-height: 140px;
+margin-bottom: 20px;
+font-size: 17px;
+}
+
+.ingredients{
+margin-bottom: 20px;
 font-size: 15px;
 }
 
@@ -74,6 +79,11 @@ font-weight: bold;
 font-style: italic;
 }
 
+.product-card .card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
 .button-group {
 margin-top: 1rem;
 }
@@ -87,6 +97,7 @@ margin-right: 0.5rem;
 cursor: pointer;
 transition: background-color 0.2s;
 border-radius: 7px;
+line-height:normal;
 }
 
 .edit-button {

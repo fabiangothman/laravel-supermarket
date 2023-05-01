@@ -19,22 +19,25 @@
 
     <!-- Archivos Vendor CSS -->
     <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      href="{{ url('/assets/vendor/bootstrap/css/bootstrap.min.css') }}"
       rel="stylesheet"
     />
     <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      href="{{ url('/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}"
       rel="stylesheet"
     />
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link href="{{ url('/assets/vendor/aos/aos.css') }}" rel="stylesheet" />
     <link
-      href="assets/vendor/glightbox/css/glightbox.min.css"
+      href="{{ url('/assets/vendor/glightbox/css/glightbox.min.css') }}"
       rel="stylesheet"
     />
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="{{ url('/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet" />
 
     <!--  CSS  -->
-    <link href="assets/css/main.css" rel="stylesheet" />
+    <link href="{{ url('/assets/css/main.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url('/assets/css/style-listar-producto.css') }}" />
+    <link rel="stylesheet" href="{{ url('/assets/css/style-crear-producto.css') }}" />
+    <link rel="stylesheet" href="{{ url('/assets/css/style-bienvenida-admin.css') }}" />
 
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="{{ asset('hardcoded_styles.css') }}" >
@@ -51,7 +54,7 @@
             class="logo d-flex align-items-center me-auto me-lg-0 {{ Request::routeIs('home') ? 'linkActive' : '' }}"
           >
             <!-- para añadir el logo descomente la siguiente linea, la imagen debe tener el nombre logo y tener formato png -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
+            <!-- <img src="{{ url('/assets/img/logo.png') }}" alt=""> -->
             <h1>{{ config('app.name') }}</h1>
           </a>
 
